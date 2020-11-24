@@ -24,11 +24,9 @@ var lina =
 const MAYOR_DE_EDAD = 18;
 
 
-const MAYORIA_DE_EDAD = (persona) =>
-{
-   return persona.edad >= MAYOR_DE_EDAD;
-   
-}
+const MAYORIA_DE_EDAD = ({edad})=> edad >= MAYOR_DE_EDAD
+
+const MENOR_DE_EDAD =({edad}) => edad <= MAYOR_DE_EDAD
 
 const cedula =(persona) =>{
     if(MAYORIA_DE_EDAD(persona))
@@ -43,3 +41,14 @@ const cedula =(persona) =>{
 cedula(lina);
 cedula(felipe);
 
+const permitiracceso = (persona) =>
+{
+    (!MAYORIA_DE_EDAD(persona))?
+    console.log("acceso denegado"):
+    console.log("acceso aprobado");
+  
+ 
+}
+
+permitiracceso(lina)
+permitiracceso(felipe)
