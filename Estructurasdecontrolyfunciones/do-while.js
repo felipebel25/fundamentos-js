@@ -7,4 +7,4 @@ do {
     contador++;
 } while (!llueve());  
 
-console.log(`fui a ver si llovia  ${contador} ${contador>1?"veces":"vez"}    `)
+console.log(`fui a ver si llovia  ${contador} ${contador>1?"veces":"vez"}`)
