@@ -7,23 +7,35 @@ var felipe =
 
 console.log(`Al inicio de año ${felipe.nombre} tiene ${felipe.peso}`);
 
-const INCREMENTO_DE_PESO = 0.2;
+const INCREMENTO_DE_PESO = 0.3;
 const DIAS_DEL_AÑO = 365;
 const AUMENTAR_DE_PESO = (persona, increment)=> persona.peso += INCREMENTO_DE_PESO;
 const ADELGAZAr_DE_PESO = (persona, increment)=> persona.peso -= INCREMENTO_DE_PESO;
+const comeMucho = () => Math.random() <0.3
+const realizaDeporte = () =>Math.random()< 0.4
 
-for(var i=1 ; i<=DIAS_DEL_AÑO; i++)
-{
-    var random =Math.random()
-    if (random<0.25)
+
+var dias = 0;
+const META = felipe.peso -3;
+
+//si esta condicion no se cumple no sirve el while
+while(felipe.peso > META){
+   debugger
+    
+    if(comeMucho())
     {
         AUMENTAR_DE_PESO(felipe);
 
-    }else if (random<0.5)
+    }
+    if (realizaDeporte())
     {
         ADELGAZAr_DE_PESO(felipe);
-
     }
+
+    dias += 1;
+
 }
 
-console.log(`Al final de año ${felipe.nombre} tiene ${felipe.peso.toFixed(2)}`);
+
+
+console.log(`${felipe.nombre} adelgazo ${felipe.peso.toFixed(2)}kg  en ${dias} dias.`);
