@@ -6,9 +6,15 @@ class People{
     this.altura =altura;
     return this;
     }
-    saludar()
+    saludar(fn)
     {
-        console.log(`Hola soy ${this.nombre} ${this.apellido}`)
+        var nombre = this.nombre
+        var apellido= this.apellido
+        console.log(`Hola soy ${nombre} ${apellido}`)
+        if(fn)
+        {
+            fn(nombre,apellido)
+        }
     }
     esAlto()
     {
@@ -23,14 +29,30 @@ class Desarrolador extends People
         super(nombre,apellido,altura)
         
     }
-    saludar()
+    saludar(fn)
     {
-        console.log(`Hola soy ${this.nombre} ${this.apellido} y soy desarrollador`)
+        var nombre = this.nombre
+        var apellido= this.apellido
+        console.log(`Hola soy ${nombre} ${apellido} y soy desarrollador`)
+        if(fn)
+        {
+            fn(nombre,apellido,true)
+        }
     }
 
 
 }
 var lina = new People("lina","ospina",1.75)
 var felipe = new Desarrolador("felipe","medina",1.8)
-felipe.saludar()
-lina.saludar();
+
+const responderSaludo =(nombre,apellido,esDev)=>
+{
+    console.log(`Hola ${nombre} `)
+    if(esDev=== true)
+    {
+        console.log(`hola ${nombre} eres dev`)
+    }
+}
+
+felipe.saludar(responderSaludo)
+lina.saludar(responderSaludo);
