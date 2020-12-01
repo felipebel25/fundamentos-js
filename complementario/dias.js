@@ -14,14 +14,3 @@
 // const nacimiento = new Date(2004,5,8)
 
 // diasentrefechas(hoy,nacimiento)
-var nombre = 'Sacha'
-var apellido = 'Lifszyc'
-
-function pasarAMayusculas(nombre)
-{
-	return nombre.toUpperCase()
-}
-
-pasarAMayusculas(nombre + ' ' + apellido)
-pasarAMayusculas('Lucía')
-pasarAMayusculas('')
