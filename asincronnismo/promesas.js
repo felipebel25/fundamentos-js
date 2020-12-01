@@ -38,4 +38,6 @@ const opts = { crossDomain: true }
   
    .catch(onError)
 
-   
+   .then(luke => console.log(luke.name))
+
+   console.log('Sacha')

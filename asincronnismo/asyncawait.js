@@ -38,3 +38,7 @@ const opts = { crossDomain: true }
     
  }
    obtenerpersonas()
+
+       const luke = await obtenerPersonaje(1)
+    console.log(luke.name)
+    console.log('Sacha')
